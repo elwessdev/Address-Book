@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+
+$color_1: #fff;
+$font-family_1: "Roboto", sans-serif;
+$background-color_1: #f4f4f4;
+$background-color_2: #fff;
+$background-color_3: #333;
+$background-color_4: #333;
+
+body {
+	font-family: $font-family_1;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: $background-color_1;
+}
+.sign-widget {
+	background-color: $background-color_2;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	h2 {
+		margin-bottom: 20px;
+    text-align: center;
+	}
+	form{
+		display: flex;
+		width: 390px;
+		flex-wrap: wrap;
+		label{
+			font-weight: 500;
+			font-size: 14px;
+		}
+		p{
+			width: 100%;
+			font-size: 13px;
+			user-select: none;
+			font-weight: 500;
+			margin: 0;
+			a{
+				color: #28a745;
+				cursor: pointer;
+				text-decoration: none;
+			}
+		}
+		input {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+			font-size: 14px;
+			height: 20px;
+			border: 1px solid #ccc;
+			outline: none;
+			border-radius: 5px;
+		}
+		button {
+			width: 155px;
+			padding: 10px;
+			background-color: #333;
+			border: none;
+			color: #fff;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 0 auto;
+			height: 40px;
+			font-weight: 700;
+			margin-top: 20px;
+			font-size: 13px;
+			&:hover {
+				background-color: $background-color_4;
+			}
+		}
+	}
+	.error_msg{
+		color: red;
+    text-align: left;
+    font-size: 14px;
+	}
+	.done_msg{
+		color: #28a745;
+    text-align: left;
+    font-size: 14px;
+	}
+}
+
+
+.topnav {
+	background-color: #333;
+	overflow: hidden;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.nav-left {
+		display: flex;
+		align-items: center;
+		.vector {
+			width: 30px;
+			height: 30px;
+			background-color: #FFF;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		.name {
+			font-size: 18px;
+			color: #FFF;
+			margin-right: 20px;
+		}
+	}
+	.nav-right {
+		display: flex;
+		align-items: center;
+		a {
+			text-decoration: none;
+			color: #fff;
+			transition: all 0.2s;
+			font-size: 16px;
+			width: 115px;
+			height: 35px;
+			background: none;
+			border-radius: 3px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			border: 0;
+			&:hover {
+				background-color: #FFF;
+				color: #333;
+			}
+		}
+	}
+}
+.page_content {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;
+	background: #FFF;
+	box-shadow: 0 0 5px 3px #00000045;
+	border-radius: 3px;
+	overflow: hidden;
+	.options{
+    width: 100%;
+    background: #333333;
+    overflow: hidden;
+		button {
+			float: right;
+			color: #fff;
+			transition: all 0.2s;
+			font-size: 16px;
+			width: 140px;
+			height: 35px;
+			background: none;
+			margin: 6px 0;
+			margin-right: 7px;
+			border-radius: 3px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			border: 0;
+			&:hover {
+				background-color: #FFF;
+				color: #333;
+			}
+		}
+		.search{
+			width: 260px;
+			height: 35px;
+			background: beige;
+			overflow: hidden;
+			float: left;
+			margin: 6px 0;
+			margin-left: 7px;
+			border-radius: 3px;
+			input {
+				width: 100%;
+				height: 100%;
+				border: none;
+				outline: none;
+				font-size: 14px;
+				text-indent: 5px;
+			}
+		}
+	}
+}
+.container {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	th {
+		background-color: #FFF;
+		text-align: left;
+		padding: 8px;
+		color: #333;
+	}
+	td {
+		padding: 8px;
+	}
+	tr {
+		transition: all .2s;
+		cursor: pointer;
+		&:hover {
+			background-color: rgb(51 51 51 / 15%);
+		}
+	}
+}
+.contact-circle {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 25px;
+	margin-right: 10px;
+	font-size: 12px;
+	color: #333;
+	font-weight: bold;
+}
