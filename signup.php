@@ -32,6 +32,7 @@
                         mysqli_query($connect,$sql);
                         echo "<p class='done_msg'>You are registered</p>";
                         $_SESSION["user_id"] = mysqli_insert_id($connect);
+                        $_SESSION["user_name"] = $username;
                         header("Location: home.php");
                         exit();
                     } catch(mysqli_sql_exception){
@@ -39,7 +40,7 @@
                     }
                 }
             }
-            mysqli_close($connect);
+            $connect->close();
         ?>
         <form id="registerForm" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
             <label>Username</label>

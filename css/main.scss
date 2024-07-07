@@ -15,6 +15,7 @@ body {
 	height: 100vh;
 	background-color: $background-color_1;
 }
+// Sign in & Sign up
 .sign-widget {
 	background-color: $background-color_2;
 	padding: 20px;
@@ -83,8 +84,7 @@ body {
     font-size: 14px;
 	}
 }
-
-
+// Home
 .topnav {
 	background-color: #333;
 	overflow: hidden;
@@ -132,89 +132,122 @@ body {
 		}
 	}
 }
-.page_content {
-	width: 80%;
+.address_content {
+	padding: 0;
+	width: 95%;
 	margin: 0 auto;
 	margin-top: 50px;
 	background: #FFF;
-	box-shadow: 0 0 5px 3px #00000045;
+	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2705882353);
 	border-radius: 3px;
 	overflow: hidden;
-	.options{
-    width: 100%;
-    background: #333333;
-    overflow: hidden;
-		button {
-			float: right;
-			color: #fff;
-			transition: all 0.2s;
-			font-size: 16px;
-			width: 140px;
-			height: 35px;
-			background: none;
-			margin: 6px 0;
-			margin-right: 7px;
-			border-radius: 3px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			cursor: pointer;
-			border: 0;
-			&:hover {
-				background-color: #FFF;
-				color: #333;
-			}
-		}
+	header {
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 		.search{
 			width: 260px;
 			height: 35px;
-			background: beige;
-			overflow: hidden;
 			float: left;
 			margin: 6px 0;
 			margin-left: 7px;
-			border-radius: 3px;
+			position: relative;
+			button{
+				position: absolute;
+				top: 8px;
+				right: 7px;
+				background: none;
+				cursor: pointer;
+				border: 0;
+				padding: 0;
+				&:hover svg{
+					fill: #29d786;
+				}
+				svg{
+					transition: all .2s;
+					width: 15px;
+				}
+			}
 			input {
+				border: 1px solid #cccccc;
+				border-radius: 4px;
 				width: 100%;
 				height: 100%;
-				border: none;
 				outline: none;
 				font-size: 14px;
 				text-indent: 5px;
 			}
 		}
-	}
-}
-.container {
-	display: table;
-	width: 100%;
-	border-collapse: collapse;
-	th {
-		background-color: #FFF;
-		text-align: left;
-		padding: 8px;
-		color: #333;
-	}
-	td {
-		padding: 8px;
-	}
-	tr {
-		transition: all .2s;
-		cursor: pointer;
-		&:hover {
-			background-color: rgb(51 51 51 / 15%);
+		.buttons {
+				button {
+						padding: 10px 20px;
+						font-size: 16px;
+						border: none;
+						border-radius: 4px;
+						cursor: pointer;
+						margin-left: 10px;
+				}
+				.add-contact {
+						background-color: #29d786;
+						color: #ffffff;
+				}
+				.export-contacts {
+						background-color: #fdbd0c;
+						color: #ffffff;
+				}
 		}
 	}
-}
-.contact-circle {
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 25px;
-	margin-right: 10px;
-	font-size: 12px;
-	color: #333;
-	font-weight: bold;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		th, td {
+				padding: 10px;
+				text-align: left;
+				border-bottom: 1px solid #cccccc;
+		}
+		th {
+				background-color: #f2f2f2;
+		}
+		.initials {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			border-radius: 50%;
+			text-align: center;
+			color: #ffffff;
+			margin-right: 10px;
+			font-size: 14px;
+			font-weight: 500;
+		}
+		tbody tr {
+			&:last-of-type td{
+				border-bottom: 0;
+			}
+			td .btns{
+				display: flex;
+				grid-gap: 10px;
+				button{
+					padding: 9px 20px;
+					font-size: 14px;
+					border: none;
+					border-radius: 4px;
+					cursor: pointer;
+					background: #29d786;
+					color: #FFF;
+					transition: all .2s;
+					&:last-of-type{
+						background-color: rgb(247, 28, 28);
+						&:hover{
+							background-color: #cd0909;
+						}
+					}
+					&:hover{
+						background-color: #28a745;
+					}
+				}
+			}
+		}
+	}
 }

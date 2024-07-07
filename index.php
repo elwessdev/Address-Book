@@ -34,18 +34,18 @@
                         echo "<p class='error_msg'>Password is required</p>";
                     } else {
                         // Use prepared statements to prevent SQL injection
-                        $stmt = $connect->prepare("SELECT id, password FROM users WHERE name = ?");
+                        $stmt = $connect->prepare("SELECT id, name, password FROM users WHERE name = ?");
                         $stmt->bind_param("s", $username);
                         $stmt->execute();
                         $stmt->store_result();
-                        // Check if any rows were returned
                         if ($stmt->num_rows==1) {
-                            $stmt->bind_result($id, $pwd);
+                            $stmt->bind_result($id, $name, $pwd);
                             $stmt->fetch();
                             // Verify the password
                             if (password_verify($password, $pwd)) {
                                 echo "<p class='done_msg'>Logged in!</p>";
                                 $_SESSION["user_id"] = $id;
+                                $_SESSION["user_name"] = $name;
                                 header("Location: home.php");
                                 exit();
                             } else {
@@ -59,6 +59,7 @@
                 } else {
                     echo "<p class='error_msg'>Please fill username and password fields!</p>";
                 }
+                $connect->close();
             }
         ?>
         <form id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" >
